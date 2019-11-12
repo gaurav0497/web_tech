@@ -1,0 +1,91 @@
+<html>
+    <head > </head>
+    <style>
+    body {
+            
+            background-image : url('pict.jpg');
+            background-position-x: 10%;
+    }
+           .block{
+                width: 33%;
+                font-size: 48px;
+                font-style: italic;
+            }
+            .block1{
+                width:13%;
+                font-size: 18px;
+                background-color: burlywood;
+             }
+             .hi{
+                 border-color:lightcoral;
+             }
+        </style>
+        <title>signup</title>
+        <script type="text/javascript">
+        function f1() {
+            var name = document.getElementById("nm").value;
+            var usn = document.getElementById("usn").value;
+            var email= document.getElementById("em").value;
+            var dob= document.getElementById("db").value;
+            var pass = document.getElementById("pass").value;
+            if((name.trim()=="" )<5)
+            {
+              name.style.border ="solid 3px red";
+              document.getElementById("lbel").style.visibility="visible";
+              return false;
+            }
+             else if((usn.trim()==""))
+           { document.getElementById("usn").style.placeContent="red";
+             usn.style.border ="solid 3px red";
+             document.getElementById("lbe1").style.visibility="visible";
+              return false;
+           }
+           else if(email.trim() == "")
+           {
+              email.style.border ="solid 3px red";
+              document.getElementById("lbel").style.visibility="visible";
+              return false;
+           }
+           
+           else if(pass.trim() == "")
+           {
+              pass.style.border ="solid 3px red";
+              document.getElementById("lbel").style.visibility="visible";
+              
+              return false;
+           }
+
+          else
+           {
+            return true;
+           }
+        }
+        </script>
+    <body text="black"  >
+       <center>
+      <h1 class="block"> Registration Form </h1> <br>
+       </center>
+      <form onsubmit="return f1();" action="logn.html">
+      <h3> User Id   :  <input id="usn" size="50" type="text" class="hi" placeholder="Required and must be of length 5 to 12" required color="red">  </h3>
+      <h3> Password    :     <input id="pass" type="password" class="hi" required> <br> </h3>
+      <h3>Name   :  <input id="nm" type="text" class="hi" placeholder="Required and alphabet only." size="50" required> </h3>
+      <h3> Address <input id ="add" placeholder="Optional" class="hi" type="text" ></h3>
+      <h3>Select  your country: 
+      <select class="hi">please select a country.
+         <option value="india" >India</option>
+         <option value="united kingdom" >united kingdom</option>
+         <option value="usa">United states of America</option>
+         <option value ="Russia">China</option>
+         <option value="Australia">Australia</option>
+      </select>
+      </h3>
+      <h3>Zipcode: <input id="zip" class="hi" placeholder="Required.Must be numeric only" required width="400" size="50"></h3>
+      <h3>Enter email        :         <input class="hi"  id="em" type="email"> </h3>
+      <h3>Sex: <input type="radio" name="g1" >male  <input type="radio" name="g1" >Female  </h3>
+      <h3>Language: <input type="checkbox" name="l1">English <input type="checkbox" name="l1">Non English</h3>
+      <h3>About: <textarea class="hi" rows="8" cols="80">Optional </textarea> </h3>
+      <center><button class="block1" type="submit" style="size: 100ch" >Submit..</button></center>
+      <label id="lbel" style="color: rgb(172, 48, 48); visibility:hidden;"><h2>You cannot leave empty...</h2></label>
+      
+    </form>
+    </body>
